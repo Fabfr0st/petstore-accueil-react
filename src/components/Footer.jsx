@@ -2,7 +2,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer classNameName="footer">
+    <footer className="footer">
       <div className="haut">
         <div className="icone">
           <div className="label">
