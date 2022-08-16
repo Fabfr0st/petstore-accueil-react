@@ -1,10 +1,4 @@
 import "./Content.css";
-import slider1 from "./img/slider1.png";
-import slider2 from "./img/slider2.png";
-import slider3 from "./img/slider3.png";
-import slider4 from "./img/slider4.png";
-import slider5 from "./img/slider5.png";
-import slider6 from "./img/slider6.jpg";
 
 export default function Content() {
   return (
@@ -64,12 +58,12 @@ export default function Content() {
       <section className="slide">
         <div className="slider">
           <div className="image">
-            <img src={slider1} alt="" />
-            <img src={slider2} alt="" />
-            <img src={slider3} alt="" />
-            <img src={slider4} alt="" />
-            <img src={slider5} alt="" />
-            <img src={slider6} alt="" />
+            <img src="./assets/img/slider1.png" alt="" />
+            <img src="./assets/img/slider2.png" alt="" />
+            <img src="./assets/img/slider3.png" alt="" />
+            <img src="./assets/img/slider4.png" alt="" />
+            <img src="./assets/img/slider5.png" alt="" />
+            <img src="./assets/img/slider6.jpg" alt="" />
           </div>
         </div>
       </section>
