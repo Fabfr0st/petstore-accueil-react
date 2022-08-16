@@ -19,7 +19,7 @@ export default function Header() {
               </div>
             </li>
             <li>
-              <a href="index.php?page=accueil">
+              <a href="/">
                 <div className="icon">
                   <i className="fa-solid fa-house fa-2xl"></i>
                 </div>
@@ -30,7 +30,7 @@ export default function Header() {
             </li>
 
             <li>
-              <a href="index.php?page=contact">
+              <a href="/contact">
                 <div className="icon">
                   <i className="fa-solid fa-phone fa-2xl"></i>
                 </div>
@@ -41,7 +41,7 @@ export default function Header() {
             </li>
 
             <li>
-              <a href="index.php?page=connexion">
+              <a href="/connexion">
                 <div className="icon">
                   <i className="fa-solid fa-user fa-2xl"></i>
                 </div>
