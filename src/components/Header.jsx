@@ -5,7 +5,7 @@ export default function Header() {
     <header>
       <nav id="navp">
         <div id="logoNav">
-          <a href="index.php?page=accueil">
+          <a href="/">
             <img src="./assets/img/logo1.png" alt="logo de petstore  " />
           </a>
         </div>
