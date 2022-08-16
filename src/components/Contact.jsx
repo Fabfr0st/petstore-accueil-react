@@ -28,7 +28,7 @@ export default function Contact() {
                 <label for="msg">Comment pouvons-nous vous aider ? : </label>
                 <textarea id="msg" name="user_message"></textarea>
               </div>
-              <div className="toto">
+              <div>
                 <input type="submit" value="Envoyer" id="submit" />
               </div>
             </form>

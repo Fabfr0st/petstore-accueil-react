@@ -3,8 +3,6 @@ label {
 }
 
 .passwordOublie {
-    display: flex;
-    justify-content: center;
     text-decoration: none;
     margin: 0px;
     color: #d6c4b8;
