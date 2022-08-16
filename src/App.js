@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import { Routes, Route } from "react-router-dom";
 import Inscription from "./components/Inscription";
+import "./components/style.css";
 
 
 function App() {

@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <>
       <div className="hearder">
-        <h2>Contacter Nous</h2>
+        <h2>Nous Contacter</h2>
       </div>
 
       <div className="box">
@@ -40,13 +40,14 @@ export default function Contact() {
             <ul id="right-column">
               <li>
                 <div className="icone">
-                  <i className="fa-solid fa-location-dot"></i> Address: 194 Rue de
-                  la Ronce, 76230 Isneauville{" "}
+                  <i className="fa-solid fa-location-dot"></i> Address: 194 Rue
+                  de la Ronce, 76230 Isneauville
                 </div>
               </li>
               <li>
                 <div className="icone">
-                  <i className="fa-solid fa-phone"></i> Téléphone: 07 50 50 50 50{" "}
+                  <i className="fa-solid fa-phone"></i> Téléphone: 07 50 50 50
+                  50
                 </div>
               </li>
               <li>
@@ -61,14 +62,14 @@ export default function Contact() {
               <a href="#">
                 <li>
                   <div className="iconeReseaux">
-                    <i className="fa-brands fa-linkedin  fa-2xl"></i>{" "}
+                    <i className="fa-brands fa-linkedin  fa-2xl"></i>
                   </div>
                 </li>
               </a>
               <a href="#">
                 <li>
                   <div className="iconeReseaux">
-                    <i className="fa-brands fa-facebook-square  fa-2xl"></i>{" "}
+                    <i className="fa-brands fa-facebook-square  fa-2xl"></i>
                   </div>
                 </li>
               </a>
@@ -82,7 +83,7 @@ export default function Contact() {
               <a href="#">
                 <li>
                   <div className="iconeReseaux">
-                    <i className="fa-brands fa-instagram fa-2xl"></i>{" "}
+                    <i className="fa-brands fa-instagram fa-2xl"></i>
                   </div>
                 </li>
               </a>
