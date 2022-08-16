@@ -1,13 +1,14 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <header>
       <nav id="navp">
         <div id="logoNav">
-          <a href="/">
+          <Link to="/">
             <img src="./assets/img/logo1.png" alt="logo de petstore  " />
-          </a>
+          </Link>
         </div>
         <div>
           {/* <div className="container"></div> */}
@@ -19,36 +20,36 @@ export default function Header() {
               </div>
             </li>
             <li>
-              <a href="/">
+              <Link to="/">
                 <div className="icon">
                   <i className="fa-solid fa-house fa-2xl"></i>
                 </div>
                 <div>
                   <span>Home</span>
                 </div>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="/contact">
+              <Link to="/contact">
                 <div className="icon">
                   <i className="fa-solid fa-phone fa-2xl"></i>
                 </div>
                 <div>
                   <span>Contact</span>
                 </div>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="/connexion">
+              <Link to="/connexion">
                 <div className="icon">
                   <i className="fa-solid fa-user fa-2xl"></i>
                 </div>
                 <div>
                   <span>Connexion</span>
                 </div>
-              </a>
+              </Link>
             </li>
             <li>
               <a href="">
