@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import { Routes, Route } from "react-router-dom";
+import Inscription from "./components/Inscription";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="connexion" element={<Connexion />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="inscription" element={<Inscription/>} />
       </Routes>
       <Footer />
     </div>
