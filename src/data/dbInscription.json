@@ -1,0 +1,16 @@
+{
+  "insciptions": [
+    {
+      "titre": "",
+      "prenom": "",
+      "nom": "",
+      "email": "",
+      "pwd": "",
+      "adresse": "",
+      "cp": "",
+      "ville": "",
+      "tel": "",
+      "id": 1
+    }
+  ]
+}
