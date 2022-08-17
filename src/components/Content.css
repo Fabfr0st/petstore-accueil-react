@@ -103,3 +103,9 @@
     transform: translateX(-4000px);
   }
 }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
