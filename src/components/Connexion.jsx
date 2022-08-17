@@ -1,8 +1,38 @@
 import "./connexion.css";
 import "./form.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 export default function Connexion() {
+  const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState();
+  const [pwd, setPwd] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const connexion = { email, pwd };
+    axios
+      .post("http://localhost:1517/connexion", connexion)
+      .then((reponse) => {
+        console.log(reponse);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  if (submitted) {
+    return (
+      <>
+        <div className="hearder">
+          <h2>Vous êtes connecté !</h2>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="hearder">
@@ -17,14 +47,22 @@ export default function Connexion() {
           </div>
 
           <div className="box-left">
-            <form action="index.php?page=connexion" method="post">
+            <form method="post" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label for="mail">Email </label>
-                <input type="email" name="mail"/>
+                <input
+                  type="email"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div className="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" name="password" />
+                <input
+                  type="password"
+                  name="password"
+                  onChange={(e) => setPwd(e.target.value)}
+                />
               </div>
               <div className="form-group">
                 <Link className="passwordOublie" to="#">

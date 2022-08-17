@@ -1,13 +1,59 @@
 import "./inscription.css";
 import "./form.css";
+import axios from "axios";
+import { useState } from "react";
 
 export default function Inscription() {
+  const [submitted, setSubmitted] = useState(false);
+  const [titre, setTitre] = useState();
+  const [prenom, setPrenom] = useState();
+  const [nom, setNom] = useState();
+  const [pwd, setPwd] = useState();
+  const [adresse, setAdresse] = useState();
+  const [email, setCp] = useState();
+  const [cp, setEmail] = useState();
+  const [ville, setVille] = useState();
+  const [tel, setTel] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const inscription = {
+      titre,
+      prenom,
+      nom,
+      pwd,
+      adresse,
+      email,
+      cp,
+      ville,
+      tel,
+    };
+    axios
+      .post("http://localhost:1517/inscriptions", inscription)
+      .then((reponse) => {
+        console.log(reponse);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  if (submitted) {
+    return (
+      <>
+        <div className="hearder">
+          <h2>Vous êtes inscrit.</h2>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <div className="hearder">
         <h2>Inscription</h2>
       </div>
-      <form action="index.php?page=inscription" method="post">
+      <form method="post" onSubmit={handleSubmit}>
         <div className="box">
           <div className="left-box">
             <div className="titre">
@@ -15,7 +61,11 @@ export default function Inscription() {
             </div>
 
             <div>
-              <select className="select" name="genre">
+              <select
+                className="select"
+                name="titre"
+                onChange={(event) => setTitre(event.target.value)}
+              >
                 <option value="1" selected>
                   Title
                 </option>
@@ -28,18 +78,33 @@ export default function Inscription() {
             <div className="ligne">
               <div>
                 <label for="prenom">Votre Prénom :</label>
-                <input type="text" name="prenom" id="prenom" />
+                <input
+                  type="text"
+                  name="prenom"
+                  id="prenom"
+                  onChange={(event) => setPrenom(event.target.value)}
+                />
               </div>
 
               <div>
                 <label for="nom">Votre Nom :</label>
-                <input type="text" name="nom" id="nom" />
+                <input
+                  type="text"
+                  name="nom"
+                  id="nom"
+                  onChange={(event) => setNom(event.target.value)}
+                />
               </div>
             </div>
 
             <div>
               <label for="email">Email :</label>
-              <input type="email" name="email" id="email" />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                onChange={(event) => setEmail(event.target.value)}
+              />
             </div>
 
             <div>
@@ -50,7 +115,12 @@ export default function Inscription() {
             <div className="ligne2">
               <div>
                 <label for="password1">Password :</label>
-                <input type="password" name="password1" id="password1" />
+                <input
+                  type="password"
+                  name="password1"
+                  id="password1"
+                  onChange={(event) => setPwd(event.target.value)}
+                />
               </div>
 
               <div>
@@ -74,6 +144,7 @@ export default function Inscription() {
                 id="adresse"
                 cols="30"
                 rows="3"
+                onChange={(event) => setAdresse(event.target.value)}
               ></textarea>
             </div>
             <div>
@@ -90,19 +161,34 @@ export default function Inscription() {
             <div className="ligne3">
               <div>
                 <label for="codepostal">Code Postal :</label>
-                <input type="text" name="codePostal" id="codePostal" />
+                <input
+                  type="text"
+                  name="codePostal"
+                  id="codePostal"
+                  onChange={(event) => setCp(event.target.value)}
+                />
               </div>
 
               <div>
                 <label for="ville">Ville :</label>
-                <input type="text" name="ville" id="ville" />
+                <input
+                  type="text"
+                  name="ville"
+                  id="ville"
+                  onChange={(event) => setVille(event.target.value)}
+                />
               </div>
             </div>
 
             <div className="ligne4">
               <div>
                 <label for="telephone">Téléphone :</label>
-                <input type="text" name="telephone" id="telephone" />
+                <input
+                  type="text"
+                  name="telephone"
+                  id="telephone"
+                  onChange={(event) => setTel(event.target.value)}
+                />
               </div>
             </div>
 
