@@ -1,9 +1,41 @@
 import "./contact.css";
 import "./form.css";
+import axios from "axios";
+import { useState } from "react";
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+  const [nom, setNom] = useState();
+  const [email, setEmail] = useState();
+  const [tel, setTel] = useState();
+  const [message, setMessage] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const contacts = { nom, email, tel, message };
+    axios
+      .post("http://localhost:1517/contacts", contacts)
+      .then((reponse) => {
+        console.log(reponse);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  if (submitted) {
+    return (
+      <>
+        <div className="hearder">
+          <h2>Votre message à bien été transmis.</h2>
+        </div>
+      </>
+    );
+  }
+
   return (
-    <>
+    <div className="contact">
       <div className="hearder">
         <h2>Nous Contacter</h2>
       </div>
@@ -11,22 +43,41 @@ export default function Contact() {
       <div className="box">
         <div className="left">
           <div className="box-left">
-            <form action="index.php?page=contact" method="post">
+            <form method="post" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label for="Nom"> Nom :</label>
-                <input type="text" name="Nom" required />
+                <input
+                  type="text"
+                  name="nom"
+                  onChange={(event) => setNom(event.target.value)}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label for="mail ">Email:</label>
-                <input type="email" name="mail" required />
+                <input
+                  type="email"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label for="Numéro de télephone">Numéro de téléphone: </label>
-                <input type="text" name="Numéro de télephone" required />
+                <input
+                  type="text"
+                  name="tel"
+                  onChange={(e) => setTel(e.target.value)}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label for="msg">Comment pouvons-nous vous aider ? : </label>
-                <textarea id="msg" name="user_message"></textarea>
+                <textarea
+                  id="msg"
+                  name="message"
+                  onChange={(e) => setMessage(e.target.value)}
+                ></textarea>
               </div>
               <div>
                 <input type="submit" value="Envoyer" id="submit" />
@@ -91,6 +142,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
